@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0b1e27;
+        }
+
+        .spinner {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .spinner-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: rotate(0deg);
+            transform-style: preserve-3d;
+            animation: spin 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+        }
+
+        .spinner-layer:nth-child(1) {
+            background-color: #F44336;
+            opacity: 0.8;
+            animation-delay: -0.16s;
+        }
+
+        .spinner-layer:nth-child(2) {
+            background-color: #9C27B0;
+            opacity: 0.6;
+            animation-delay: -0.32s;
+        }
+
+        .spinner-layer:nth-child(3) {
+            background-color: #2196F3;
+            opacity: 0.4;
+            animation-delay: -0.48s;
+        }
+
+        @keyframes spin {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(90deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            75% {
+                transform: rotate(270deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="spinner">
+        <div class="spinner-layer"></div>
+        <div class="spinner-layer"></div>
+        <div class="spinner-layer"></div>
+    </div>
+</body>
+
+</html>
